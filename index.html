@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="theme-toggle" class="theme-toggle">🌓</button>
+        <h1>🔐 Password Generator</h1>
+        
+        <div class="password-display">
+            <input type="text" id="password" readonly>
+            <button id="copy-btn">Copy</button>
+        </div>
+        
+        <div class="controls">
+            <div class="length-control">
+                <label>Length: <span id="length-value">16</span></label>
+                <input type="range" id="length" min="8" max="32" value="16">
+            </div>
+            
+            <div class="options">
+                <label><input type="checkbox" id="uppercase" checked> A-Z</label>
+                <label><input type="checkbox" id="lowercase" checked> a-z</label>
+                <label><input type="checkbox" id="numbers" checked> 0-9</label>
+                <label><input type="checkbox" id="symbols" checked> !@#$</label>
+            </div>
+            
+            <button id="generate-btn">Generate</button>
+            <button id="export-btn">Export</button>
+            <button id="qr-btn">QR Code</button>
+        </div>
+        
+        <div class="security-info">
+            <div class="strength-meter">
+                <div class="bar"></div>
+                <span id="strength-text">Medium</span>
+            </div>
+            <div id="leak-status">Checking breaches...</div>
+            <div id="expiry">Expires in 30 days</div>
+        </div>
+        
+        <div id="qr-container"></div>
+        
+        <div class="history">
+            <h3>Recent Passwords</h3>
+            <ul id="history-list"></ul>
+        </div>
+        
+        <div class="decrypt">
+            <h3>Decrypt File</h3>
+            <input type="file" id="encrypted-file">
+            <input type="password" id="decryption-key" placeholder="Your secret key">
+            <button id="decrypt-btn">Decrypt</button>
+            <div id="decrypted-password"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

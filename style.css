@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #f5f7fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --primary: #2ecc71;
+    --secondary: #3498db;
+    --danger: #e74c3c;
+    --warning: #f39c12;
+    --muted: #7f8c8d;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #f0f0f0;
+    --card-bg: #16213e;
+    --border-color: #2d3748;
+    --primary: #4cc9f0;
+    --secondary: #6a4c93;
+    --muted: #a0aec0;
+    --shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+h1, h3 {
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+.password-display {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#password {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+#copy-btn {
+    padding: 0 15px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#copy-btn:hover {
+    opacity: 0.9;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.length-control {
+    margin-bottom: 15px;
+}
+
+.length-control label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#length {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.security-info {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 5px;
+}
+
+.strength-meter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bar {
+    height: 8px;
+    background: var(--warning);
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-grow: 1;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+#strength-text {
+    font-weight: bold;
+}
+
+#leak-status, #expiry {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+#qr-container {
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.dark-mode #qr-container {
+    background: var(--card-bg);
+}
+
+.history {
+    margin-top: 20px;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+#history-list li:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.decrypt {
+    margin-top: 25px;
+}
+
+#encrypted-file, #decryption-key {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+#decrypted-password {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 5px;
+    word-break: break-all;
+}

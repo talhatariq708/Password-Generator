@@ -73,6 +73,6 @@ v1.0.0 (Current)
 
 Talha Tariq
 
-    GitHub: @talhatariq
+    GitHub: @talhatariq708
 
     Email: talhatariq708@gmail.com
